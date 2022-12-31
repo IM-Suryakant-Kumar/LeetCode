@@ -1,4 +1,4 @@
-# **1. Two Sum**
+<h1><strong><a href="#">1. Two Sum</a></strong></h1>Easy<h3></h3><hr>
 
 Given an array of integers `nums` and an integer `target`, return  *indices of the two numbers such that they add up to `target`* .
 
@@ -25,9 +25,12 @@ You can return the answer in any order.
 <strong>Output:</strong> [0,1]
 </pre>
 
-**Constraints:**
+<p><strong>Constraints:</strong></p>
 
-* `2 <= nums.length <= 10<sup>4</sup>`
-* `-10<sup>9</sup><span> </span><= nums[i] <= 10<sup>9</sup>`
-* `-10<sup>9</sup><span> </span><= target <= 10<sup>9</sup>`
-* **Only one valid answer exists.**
+<ul>
+    <li><code>2 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+    <li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+    <li><code>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></code></li>
+    <li><strong>Only one valid answer exists.</strong></li>
+</ul>
+
