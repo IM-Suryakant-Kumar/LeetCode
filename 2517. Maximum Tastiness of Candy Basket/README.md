@@ -1,13 +1,11 @@
-# 2517. Maximum Tastiness of Candy Basket
+<h1><a href="https://leetcode.com/problems/maximum-tastiness-of-candy-basket/">2517. Maximum Tastiness of Candy Basket</a></h1>
+<h3>Medium</h3><hr>
+<p>You are given an array of positive integers <code>price</code> where <code>price[i]</code> denotes the price of the <code>i<sup>th</sup></code> candy and a positive integer <code>k</code>.</p>
+<p>The store sells baskets of <code>k</code> <strong>distinct</strong> candies. The <strong>tastiness</strong> of a candy basket is the smallest absolute difference of the <strong>prices</strong> of any two candies in the basket.</p>
 
+<p>Return <em>the <strong>maximum</strong> tastiness of a candy basket.</em></p>
 
-You are given an array of positive integers `price` where `price[i]` denotes the price of the `i<sup>th</sup>` candy and a positive integer `k`.
-
-The store sells baskets of `k` **distinct** candies. The **tastiness** of a candy basket is the smallest absolute difference of the **prices** of any two candies in the basket.
-
-Return *the **maximum** tastiness of a candy basket.*
-
-**Example 1:**
+<p><strong>Example 1:</strong></p>
 
 <pre><strong>Input:</strong> price = [13,5,1,8,21,2], k = 3
 <strong>Output:</strong> 8
@@ -16,7 +14,7 @@ The tastiness of the candy basket is: min(|13 - 5|, |13 - 21|, |5 - 21|) = min(8
 It can be proven that 8 is the maximum tastiness that can be achieved.
 </pre>
 
-**Example 2:**
+<p><strong>Example 2:</strong></p>
 
 <pre><strong>Input:</strong> price = [1,3,1], k = 2
 <strong>Output:</strong> 2
@@ -25,14 +23,16 @@ The tastiness of the candy basket is: min(|1 - 3|) = min(2) = 2.
 It can be proven that 2 is the maximum tastiness that can be achieved.
 </pre>
 
-**Example 3:**
+<p><strong>Example 3:</strong></p>
 
 <pre><strong>Input:</strong> price = [7,7,7,7], k = 2
 <strong>Output:</strong> 0
 <strong>Explanation:</strong> Choosing any two distinct candies from the candies we have will result in a tastiness of 0.
 </pre>
 
-**Constraints:**
+<p><strong>Constraints:</strong></p>
 
-* `2 <= k <= price.length <= 10<sup>5</sup>`
-* `1 <= price[i] <= 10<sup>9</sup>`
+<ul>
+    <li><code>2 &lt;= k &lt;= price.length &lt;= 10<sup>5</sup>/code></li>
+    <li><code>1 &lt;= price[i] &lt;= 10<sup>9</sup>/code></li>
+</ul>
