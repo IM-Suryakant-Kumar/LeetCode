@@ -18,11 +18,14 @@ The overall run time complexity should be `O(log (m+n))`.
 <strong>Explanation:</strong> merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
 </pre>
 
-**Constraints:**
+<p><strong>Constraints:</strong></p>
 
-* `nums1.length == m`
-* `nums2.length == n`
-* `0 <= m <= 1000`
-* `0 <= n <= 1000`
-* `1 <= m + n <= 2000`
-* `-10<sup>6</sup><span> </span><= nums1[i], nums2[i] <= 10<sup>6</sup>`
+<ul>
+    <li><code>nums1.length == m</code></li>
+    <li><code>nums2.length == n</code></li>
+    <li><code>0 &lt;= m &lt;= 1000</code></li>
+    <li><code>0 &lt;= n &lt;= 1000</code></li>
+    <li><code>1 &lt;= m + n &lt;= 2000</code></li>
+    <li><code>-10<sup>6</sup> &lt;= nums1[i], nums2[i] &lt;= 10<sup>6</sup></code></li>
+</ul>
+
