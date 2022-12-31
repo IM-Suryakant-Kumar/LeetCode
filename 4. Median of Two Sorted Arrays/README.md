@@ -1,4 +1,4 @@
-# **4. Median of Two Sorted Arrays**
+<h1><strong><a href="#">4. Median of Two Sorted Arrays</a></strong></h1><h3>Hard</h3><hr>
 
 Given two sorted arrays `nums1` and `nums2` of size `m` and `n` respectively, return **the median** of the two sorted arrays.
 
