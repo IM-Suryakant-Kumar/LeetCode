@@ -5,10 +5,8 @@
  */
 var map = function(arr, fn) {
     const newArr = []
-    
-    arr.forEach((i, idx) => {
-        newArr.push(fn(i, idx))
-    })
-    
+    for(let i = 0; i < arr.length; i++) {
+        newArr.push(fn(arr[i], i))
+    }
     return newArr;
 };
