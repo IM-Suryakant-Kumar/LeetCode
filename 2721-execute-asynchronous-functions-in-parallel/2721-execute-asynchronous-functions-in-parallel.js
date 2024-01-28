@@ -7,16 +7,14 @@ var promiseAll = function(functions) {
     return new Promise((resolve, reject) => {
         const result = [];
         let pending = functions.length;
-        functions.forEach((promise, idx) => {
-            promise().then(val => {
-                result[idx] = val;
+        functions.forEach(async (promise, idx) => {
+            try {
+                result[idx] = await promise();
                 pending--;
-                if(pending === 0) {
-                    resolve(result)
-                }
-            }).catch(err => {
+                if(pending === 0) resolve(result)
+            } catch(err) {
                 reject(err)
-            })
+            }
         })
     })
 };
