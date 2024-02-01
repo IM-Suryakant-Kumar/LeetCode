@@ -6,9 +6,9 @@ var createCounter = function(init) {
     let n = init;
 
     return {
-        increment: () => ++n,
-        decrement: () => --n,
-        reset: () => n = init,
+        increment () { return ++n },
+        decrement () { return --n },
+        reset () { return n = init },
     }
 };
 
