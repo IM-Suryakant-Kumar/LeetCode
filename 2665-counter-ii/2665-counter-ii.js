@@ -2,13 +2,13 @@
  * @param {integer} init
  * @return { increment: Function, decrement: Function, reset: Function }
  */
-let n;
 var createCounter = function(init) {
     let n = init;
+
     return {
         increment: () => ++n,
-        reset: () => n = init,
         decrement: () => --n,
+        reset: () => n = init,
     }
 };
 
