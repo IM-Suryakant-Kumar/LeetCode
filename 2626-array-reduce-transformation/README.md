@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/array-reduce-transformation/">2626. Array Reduce Transformation</a></h2><h3>Easy</h3><hr><div><p>Given an integer array <code>nums</code>, a reducer function <code>fn</code>, and an initial value <code>init</code>, return the final result obtained by executing the <code>fn</code> function on each element of the array, sequentially, passing in the return value from the calculation on the preceding element.</p>
+<h2><a href="https://leetcode.com/problems/array-reduce-transformation">2626. Array Reduce Transformation</a></h2><h3>Easy</h3><hr><p>Given an integer array <code>nums</code>, a reducer function <code>fn</code>, and an initial value <code>init</code>, return the final result obtained by executing the <code>fn</code> function on each element of the array, sequentially, passing in the return value from the calculation on the preceding element.</p>
 
 <p>This result is achieved through the following operations: <code>val = fn(init, nums[0]), val = fn(val, nums[1]), val = fn(val, nums[2]), ...</code> until every element in the array has been processed. The ultimate value of <code>val</code> is then returned.</p>
 
@@ -9,7 +9,8 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre><strong>Input:</strong> 
+<pre>
+<strong>Input:</strong> 
 nums = [1,2,3,4]
 fn = function sum(accum, curr) { return accum + curr; }
 init = 0
@@ -25,7 +26,8 @@ The final answer is 10.
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre><strong>Input:</strong> 
+<pre>
+<strong>Input:</strong> 
 nums = [1,2,3,4]
 fn = function sum(accum, curr) { return accum + curr * curr; }
 init = 100
@@ -41,7 +43,8 @@ The final answer is 130.
 
 <p><strong class="example">Example 3:</strong></p>
 
-<pre><strong>Input:</strong> 
+<pre>
+<strong>Input:</strong> 
 nums = []
 fn = function sum(accum, curr) { return 0; }
 init = 25
@@ -57,4 +60,3 @@ init = 25
 	<li><code>0 &lt;= nums[i] &lt;= 1000</code></li>
 	<li><code>0 &lt;= init &lt;= 1000</code></li>
 </ul>
-</div>
