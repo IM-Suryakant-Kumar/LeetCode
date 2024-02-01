@@ -4,12 +4,12 @@
  * @return {number[]}
  */
 var filter = function(arr, fn) {
-    const len = arr.length;
-    for(let i = 0; i < len; i++ ) {
-        if(fn(arr[0], i)) {
-            arr.push(arr[0])
+    const res = [];
+    for(let i = 0; i < arr.length; i++) {
+        if(fn(arr[i], i)) {
+            res.push(arr[i]);
         }
-        arr.shift()
     }
-    return arr;
+
+    return  res;
 };
