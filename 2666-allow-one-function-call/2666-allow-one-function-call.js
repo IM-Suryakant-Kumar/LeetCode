@@ -2,15 +2,16 @@
  * @param {Function} fn
  * @return {Function}
  */
-var once = function (fn) {
+var once = function(fn) {
     let hasBeenCalled = false
-
-    return function (...args) {
-        if (!hasBeenCalled) {
+    
+    return function(...args){
+        if(!hasBeenCalled) {
             hasBeenCalled = true
             return fn(...args)
+        } else {
+            return undefined
         }
-        return undefined
     }
 };
 
