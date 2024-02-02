@@ -1,8 +1,9 @@
-<h2><a href="https://leetcode.com/problems/interval-cancellation/">2725. Interval Cancellation</a></h2><h3>Easy</h3><hr><div><p>Given a function <code>fn</code>, an array of arguments&nbsp;<code>args</code>, and&nbsp;an interval time <code>t</code>, return a cancel function <code>cancelFn</code>.</p>
+<h2><a href="https://leetcode.com/problems/interval-cancellation">2725. Interval Cancellation</a></h2><h3>Easy</h3><hr><p>Given a function <code>fn</code>, an array of arguments&nbsp;<code>args</code>, and&nbsp;an interval time <code>t</code>, return a cancel function <code>cancelFn</code>.</p>
 
 <p>After a delay of&nbsp;<code>cancelTimeMs</code>, the returned cancel function&nbsp;<code>cancelFn</code>&nbsp;will be invoked.</p>
 
-<pre>setTimeout(cancelFn, cancelTimeMs)
+<pre>
+setTimeout(cancelFn, cancelTimeMs)
 </pre>
 
 <p>The function <code>fn</code> should be called with <code>args</code> immediately and then called again every&nbsp;<code>t</code> milliseconds&nbsp;until&nbsp;<code>cancelFn</code>&nbsp;is called at <code>cancelTimeMs</code> ms.</p>
@@ -12,15 +13,16 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre><strong>Input:</strong> fn = (x) =&gt; x * 2, args = [4], t = 35
+<pre>
+<strong>Input:</strong> fn = (x) =&gt; x * 2, args = [4], t = 35
 <strong>Output:</strong> 
 [
-   {"time": 0, "returned": 8},
-   {"time": 35, "returned": 8},
-   {"time": 70, "returned": 8},
-   {"time": 105, "returned": 8},
-   {"time": 140, "returned": 8},
-   {"time": 175, "returned": 8}
+   {&quot;time&quot;: 0, &quot;returned&quot;: 8},
+   {&quot;time&quot;: 35, &quot;returned&quot;: 8},
+   {&quot;time&quot;: 70, &quot;returned&quot;: 8},
+   {&quot;time&quot;: 105, &quot;returned&quot;: 8},
+   {&quot;time&quot;: 140, &quot;returned&quot;: 8},
+   {&quot;time&quot;: 175, &quot;returned&quot;: 8}
 ]
 <strong>Explanation:</strong> 
 const cancelTimeMs = 190;
@@ -39,15 +41,16 @@ Cancelled at 190ms
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre><strong>Input:</strong> fn = (x1, x2) =&gt; (x1 * x2), args = [2, 5], t = 30
+<pre>
+<strong>Input:</strong> fn = (x1, x2) =&gt; (x1 * x2), args = [2, 5], t = 30
 <strong>Output:</strong> 
 [
-   {"time": 0, "returned": 10},
-   {"time": 30, "returned": 10},
-   {"time": 60, "returned": 10},
-   {"time": 90, "returned": 10},
-   {"time": 120, "returned": 10},
-   {"time": 150, "returned": 10}
+   {&quot;time&quot;: 0, &quot;returned&quot;: 10},
+   {&quot;time&quot;: 30, &quot;returned&quot;: 10},
+   {&quot;time&quot;: 60, &quot;returned&quot;: 10},
+   {&quot;time&quot;: 90, &quot;returned&quot;: 10},
+   {&quot;time&quot;: 120, &quot;returned&quot;: 10},
+   {&quot;time&quot;: 150, &quot;returned&quot;: 10}
 ]
 <strong>Explanation:</strong> 
 const cancelTimeMs = 165; 
@@ -66,13 +69,14 @@ Cancelled at 165ms
 
 <p><strong class="example">Example 3:</strong></p>
 
-<pre><strong>Input:</strong> fn = (x1, x2, x3) =&gt; (x1 + x2 + x3), args = [5, 1, 3], t = 50
+<pre>
+<strong>Input:</strong> fn = (x1, x2, x3) =&gt; (x1 + x2 + x3), args = [5, 1, 3], t = 50
 <strong>Output:</strong> 
 [
-   {"time": 0, "returned": 9},
-   {"time": 50, "returned": 9},
-   {"time": 100, "returned": 9},
-   {"time": 150, "returned": 9}
+   {&quot;time&quot;: 0, &quot;returned&quot;: 9},
+   {&quot;time&quot;: 50, &quot;returned&quot;: 9},
+   {&quot;time&quot;: 100, &quot;returned&quot;: 9},
+   {&quot;time&quot;: 150, &quot;returned&quot;: 9}
 ]
 <strong>Explanation:</strong> 
 const cancelTimeMs = 180;
@@ -97,4 +101,3 @@ Cancelled at 180ms
 	<li><code><font face="monospace">30 &lt;= t &lt;= 100</font></code></li>
 	<li><code><font face="monospace">10 &lt;= </font>cancelTimeMs<font face="monospace"> &lt;= 500</font></code></li>
 </ul>
-</div>
