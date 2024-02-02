@@ -12,7 +12,9 @@ function memoize(fn) {
             return cache[key];
         } 
         
-        return cache[key] = fn(...args);
+        cache[key] = fn(...args);
+
+        return cache[key]
     }
 
 }
