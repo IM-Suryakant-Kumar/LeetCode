@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/memoize/">2623. Memoize</a></h2><h3>Medium</h3><hr><div><p>Given a function <code>fn</code>, return a&nbsp;<strong>memoized</strong>&nbsp;version of that function.</p>
+<h2><a href="https://leetcode.com/problems/memoize">2623. Memoize</a></h2><h3>Medium</h3><hr><p>Given a function <code>fn</code>, return a&nbsp;<strong>memoized</strong>&nbsp;version of that function.</p>
 
 <p>A&nbsp;<strong>memoized&nbsp;</strong>function is a function that will never be called twice with&nbsp;the same inputs. Instead it will return&nbsp;a cached value.</p>
 
@@ -13,49 +13,52 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre><strong>Input:</strong>
-fnName = "sum"
-actions = ["call","call","getCallCount","call","getCallCount"]
+<pre>
+<strong>Input:</strong>
+fnName = &quot;sum&quot;
+actions = [&quot;call&quot;,&quot;call&quot;,&quot;getCallCount&quot;,&quot;call&quot;,&quot;getCallCount&quot;]
 values = [[2,2],[2,2],[],[1,2],[]]
 <strong>Output:</strong> [4,4,1,3,2]
 <strong>Explanation:</strong>
 const sum = (a, b) =&gt; a + b;
 const memoizedSum = memoize(sum);
-memoizedSum(2, 2); // "call" - returns 4. sum() was called as (2, 2) was not seen before.
-memoizedSum(2, 2); // "call" - returns 4. However sum() was not called because the same inputs were seen before.
-// "getCallCount" - total call count: 1
-memoizedSum(1, 2); // "call" - returns 3. sum() was called as (1, 2) was not seen before.
-// "getCallCount" - total call count: 2
+memoizedSum(2, 2); // &quot;call&quot; - returns 4. sum() was called as (2, 2) was not seen before.
+memoizedSum(2, 2); // &quot;call&quot; - returns 4. However sum() was not called because the same inputs were seen before.
+// &quot;getCallCount&quot; - total call count: 1
+memoizedSum(1, 2); // &quot;call&quot; - returns 3. sum() was called as (1, 2) was not seen before.
+// &quot;getCallCount&quot; - total call count: 2
 </pre>
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre><strong>Input:
-</strong>fnName = "factorial"
-actions = ["call","call","call","getCallCount","call","getCallCount"]
+<pre>
+<strong>Input:
+</strong>fnName = &quot;factorial&quot;
+actions = [&quot;call&quot;,&quot;call&quot;,&quot;call&quot;,&quot;getCallCount&quot;,&quot;call&quot;,&quot;getCallCount&quot;]
 values = [[2],[3],[2],[],[3],[]]
 <strong>Output:</strong> [2,6,2,2,6,2]
 <strong>Explanation:</strong>
 const factorial = (n) =&gt; (n &lt;= 1) ? 1 : (n * factorial(n - 1));
 const memoFactorial = memoize(factorial);
-memoFactorial(2); // "call" - returns 2.
-memoFactorial(3); // "call" - returns 6.
-memoFactorial(2); // "call" - returns 2. However factorial was not called because 2 was seen before.
-// "getCallCount" - total call count: 2
-memoFactorial(3); // "call" - returns 6. However factorial was not called because 3 was seen before.
-// "getCallCount" - total call count: 2
+memoFactorial(2); // &quot;call&quot; - returns 2.
+memoFactorial(3); // &quot;call&quot; - returns 6.
+memoFactorial(2); // &quot;call&quot; - returns 2. However factorial was not called because 2 was seen before.
+// &quot;getCallCount&quot; - total call count: 2
+memoFactorial(3); // &quot;call&quot; - returns 6. However factorial was not called because 3 was seen before.
+// &quot;getCallCount&quot; - total call count: 2
 </pre>
 
 <p><strong class="example">Example 3:</strong></p>
 
-<pre><strong>Input:
-</strong>fnName = "fib"
-actions = ["call","getCallCount"]
+<pre>
+<strong>Input:
+</strong>fnName = &quot;fib&quot;
+actions = [&quot;call&quot;,&quot;getCallCount&quot;]
 values = [[5],[]]
 <strong>Output:</strong> [8,1]
 <strong>Explanation:
-</strong>fib(5) = 8 // "call"
-// "getCallCount" - total call count: 1
+</strong>fib(5) = 8 // &quot;call&quot;
+// &quot;getCallCount&quot; - total call count: 1
 </pre>
 
 <p>&nbsp;</p>
@@ -66,7 +69,6 @@ values = [[5],[]]
 	<li><code>1 &lt;= n &lt;= 10</code></li>
 	<li><code>0 &lt;= actions.length &lt;= 10<sup>5</sup></code></li>
 	<li><code>actions.length === values.length</code></li>
-	<li><code>actions[i]</code> is one of "call" and "getCallCount"</li>
-	<li><code>fnName</code> is one of "sum", "factorial" and&nbsp;"fib"</li>
+	<li><code>actions[i]</code> is one of &quot;call&quot; and &quot;getCallCount&quot;</li>
+	<li><code>fnName</code> is one of &quot;sum&quot;, &quot;factorial&quot; and&nbsp;&quot;fib&quot;</li>
 </ul>
-</div>
