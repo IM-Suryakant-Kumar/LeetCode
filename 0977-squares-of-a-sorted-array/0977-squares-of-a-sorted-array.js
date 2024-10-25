@@ -3,19 +3,9 @@
  * @return {number[]}
  */
 var sortedSquares = function(nums) {
-    const newArr = new Array(nums.length).fill(0);
-    let leftPointer = 0, rightPointer = nums.length - 1;
-    for(let i = newArr.length - 1; i >= 0; i--) {
-        const leftSquared = nums[leftPointer] ** 2;
-        const rightSquared = nums[rightPointer] ** 2;
-        if(leftSquared > rightSquared) {
-            newArr[i] = leftSquared;
-            leftPointer++;
-        } else {
-            newArr[i] = rightSquared;
-            rightPointer--;
-        }
+    const ans = new Array(nums.length).fill(0);
+    for(let i = 0; i < nums.length; i++) {
+        ans[i] = Math.pow(nums[i], 2);
     }
-    newArr.sort((a, b) => a - b);
-    return newArr;
+    return ans.sort((a, b) => a - b)
 };
