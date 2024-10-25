@@ -3,7 +3,7 @@
  * @return {boolean}
  */
 var isMonotonic = function(nums) {
-    if(nums.length <= 1) return true;
+    if(nums.length === 0) return true;
     
     const first = nums[0], last = nums[nums.length - 1];
     if(first === last) {
