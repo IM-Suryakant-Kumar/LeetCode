@@ -3,16 +3,16 @@
  * @param {number} k
  * @return {number}
  */
-var findTheWinner = function(n, k) {
+var findTheWinner = function (n, k) {
     const arr = Array.from({length: n}, (_, i) => i + 1);
-
-    function helperFunction(arr, startIndex) {
+    
+    function helper(arr, startIdx) {
+        // Base case
         if(arr.length === 1) return arr[0];
-
-        const indexToRemove = (startIndex + k - 1) % arr.length;
-        arr.splice(indexToRemove, 1);
-        return helperFunction(arr, indexToRemove);
+        // Recurssive case
+        const idxToRemove = (startIdx + k - 1) % arr.length;
+        arr.splice(idxToRemove, 1);
+        return helper(arr, idxToRemove);
     }
-
-    return helperFunction(arr, 0);
+    return helper(arr, 0);
 };
