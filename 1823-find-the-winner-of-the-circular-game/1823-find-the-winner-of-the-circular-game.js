@@ -4,15 +4,12 @@
  * @return {number}
  */
 var findTheWinner = function (n, k) {
-    const arr = Array.from({length: n}, (_, i) => i + 1);
-    
-    function helper(arr, startIdx) {
-        // Base case
-        if(arr.length === 1) return arr[0];
-        // Recurssive case
-        const idxToRemove = (startIdx + k - 1) % arr.length;
-        arr.splice(idxToRemove, 1);
-        return helper(arr, idxToRemove);
+    function josephus(n) {
+        // base case
+        if(n === 1) return 0;
+
+        // recurssive case
+        return (josephus(n - 1) + k) % n;
     }
-    return helper(arr, 0);
+    return josephus(n) + 1;
 };
