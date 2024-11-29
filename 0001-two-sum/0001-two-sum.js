@@ -4,15 +4,12 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    const seen = {};
-
+    const track = new Map();
     for(let i = 0; i < nums.length; i++) {
-        const diff = target - nums[i];
-
-        if(diff in seen) {
-            return [i, seen[diff]];
-        } else {
-            seen[nums[i]] = i;
-        }
+        let firstEle = nums[i];
+        let secondEle = target - firstEle;
+        if(track.has(secondEle)) return [track.get(secondEle), i];
+        track.set(firstEle, i);
     }
+    return;
 };
