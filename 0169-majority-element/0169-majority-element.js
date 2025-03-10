@@ -3,20 +3,16 @@
  * @return {number}
  */
 var majorityElement = function(nums) {
-    // Optimised O(nlogn)
-    nums.sort((a, b) => a - b);
-    let freq = 1, ans = nums[0], n = nums.length;
+    // Moore's Voting Algorithm
+    let freq = 0, ans = 0;
 
-    for(let i = 1; i < n; i++) {
-        if(nums[i - 1] === nums[i]) {
-            freq++;
-        } else {
-            freq = 1;
+    for(let i = 0; i < nums.length; i++) {
+        if(freq === 0) {
             ans = nums[i];
         }
 
-        if(freq > n / 2) return ans;
+        freq += (ans === nums[i]) ? 1 : -1;
     }
 
-    return -1;
+    return ans;
 };
