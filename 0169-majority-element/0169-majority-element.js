@@ -3,16 +3,20 @@
  * @return {number}
  */
 var majorityElement = function(nums) {
-    for(let val of nums) {
-        let freq = 0;
-        for(let el of nums) {
-            if(val === el) {
-                freq++;
-            }
+    
+    nums.sort((a, b) => a - b);
+    let freq = 1, ans = nums[0];
+
+    for(let i = 1; i < nums.length; i++) {
+        if(nums[i - 1] === nums[i]) {
+            freq++;
+        } else {
+            freq = 1;
+            ans = nums[i]
         }
 
-        if(freq > nums.length / 2) return val;
+        if(freq > nums.length / 2) return ans;
     }
 
-    return -1;
+    return ans;
 };
