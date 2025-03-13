@@ -3,16 +3,16 @@
  * @return {number}
  */
 var majorityElement = function(nums) {
-    // Moore's Voting Algorithm
-    let freq = 0, ans = 0;
-
-    for(let i = 0; i < nums.length; i++) {
-        if(freq === 0) {
-            ans = nums[i];
+    for(let val of nums) {
+        let freq = 0;
+        for(let el of nums) {
+            if(val === el) {
+                freq++;
+            }
         }
 
-        freq += (ans === nums[i]) ? 1 : -1;
+        if(freq > nums.length / 2) return val;
     }
 
-    return ans;
+    return -1;
 };
