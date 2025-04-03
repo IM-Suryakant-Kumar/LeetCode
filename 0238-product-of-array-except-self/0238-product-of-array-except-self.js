@@ -3,18 +3,20 @@
  * @return {number[]}
  */
 var productExceptSelf = function(nums) {
-    const ans = new Array(nums.length).fill(0);
-    // prefix
+    const n = nums.length;
+    const ans = new Array(n).fill(1);
+
     let pre = 1;
-    for(let i = 0; i < nums.length; i++) {
-        ans[i] = pre;
+    for(let i = 0; i < n; i++) {
+        ans[i] *= pre;
         pre *= nums[i];
     }
-    // postfix
+
     let post = 1;
-    for(let i = nums.length - 1; i >= 0; i--) {
+    for(let i = n - 1; i >= 0; i--) {
         ans[i] *= post;
         post *= nums[i];
     }
+
     return ans;
 };
